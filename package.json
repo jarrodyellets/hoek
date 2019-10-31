@@ -14,11 +14,14 @@
     "dependencies": {},
     "devDependencies": {
         "@hapi/code": "6.x.x",
-        "@hapi/lab": "20.x.x"
+        "@hapi/lab": "20.x.x",
+        "typedoc": "^0.15.0",
+        "typedoc-plugin-markdown": "^2.2.11"
     },
     "scripts": {
         "test": "lab -a @hapi/code -t 100 -L -Y",
-        "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html"
+        "test-cov-html": "lab -a @hapi/code -t 100 -L -r html -o coverage.html",
+        "generateDocs": "typedoc docs lib --readme none --target ES6 --plugin typedoc-plugin-markdown --includeDeclarations --disableOutputCheck --excludeExternals -hideSources -hideBreadcrumbs"
     },
     "license": "BSD-3-Clause"
 }
